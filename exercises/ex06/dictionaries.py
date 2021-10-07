@@ -4,17 +4,19 @@ __author__ = "730403391"
 
 
 def invert(dictonary: dict[str, str]) -> dict[str, str]:
+    """Takes the keys of one dictionary and makes them the values of another. Swaps key and values."""
     result_dict: dict[str, str] = {}
     for keys in dictonary:
         value = dictonary[keys]
         if value in result_dict:
-            raise KeyError
+            raise KeyError("Same keys detected.")
         else:
             result_dict[value] = keys
     return result_dict
 
 
 def favorite_color(dictonary: dict[str, str]) -> str:
+    """Returns the most frequent color."""
     count_dict: dict[str, int] = {}
     for keys in dictonary:
         if dictonary[keys] in count_dict:
@@ -31,6 +33,7 @@ def favorite_color(dictonary: dict[str, str]) -> str:
 
 
 def count(llist: list[str]) -> dict[str, int]:
+    """Creates a dictionary of the number of times a character appears within a list of strings."""
     result: dict[str, int] = {}
     for char in llist:
         if char in result:
